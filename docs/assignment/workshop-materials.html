@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>aivOavi – Workshop Materials</title>
+<style>
+  @page { size: A4; margin: 15mm 16mm 14mm 16mm; }
+  :root { --green: #0B3D2E; --yellow: #FFD23F; --orange: #FF8A00; --ink: #1d2320; --muted: #56605b; --line: #d6dcd8; --tint: #f3f6f4; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; font-family: Carlito, Calibri, "Liberation Sans", Arial, sans-serif; font-size: 10.4pt; line-height: 1.38; color: var(--ink); }
+  h1 { font-size: 21pt; margin: 0; color: var(--green); letter-spacing: .2px; }
+  h2 { font-size: 13pt; color: var(--green); margin: 13px 0 5px; padding-bottom: 2px; border-bottom: 2px solid var(--yellow); }
+  h3 { font-size: 10.8pt; margin: 8px 0 3px; color: var(--green); }
+  p { margin: 0 0 5px; }
+  ol, ul { margin: 0 0 6px; padding-left: 19px; }
+  li { margin: 0 0 2px; }
+  .sub { color: var(--muted); font-size: 10.6pt; margin-top: 2px; }
+  .meta { display: flex; gap: 22px; margin-top: 8px; font-size: 9.8pt; color: var(--muted); }
+  .meta span b { color: var(--ink); font-weight: 600; }
+  .head { border-left: 6px solid var(--yellow); padding: 2px 0 6px 12px; margin-bottom: 4px; }
+  .box { background: var(--tint); border-left: 4px solid var(--green); padding: 7px 10px; margin: 6px 0 7px; }
+  .box.warn { border-left-color: var(--orange); }
+  table { width: 100%; border-collapse: collapse; margin: 4px 0 6px; font-size: 9.3pt; line-height: 1.3; }
+  th, td { border: 1px solid var(--line); padding: 3px 5px; vertical-align: top; text-align: left; }
+  th { background: var(--green); color: #fff; font-weight: 600; }
+  tr:nth-child(even) td { background: #fafbfa; }
+  tr { break-inside: avoid; }
+  td.c, th.c { text-align: center; }
+  .us td { background: #fff8db !important; }
+  .key { font-size: 8.8pt; color: var(--muted); margin-top: -2px; }
+  .cite { color: var(--muted); font-size: 8.6pt; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+  .shots { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px 8px; margin: 6px 0 0; }
+  figure { margin: 0; text-align: center; }
+  figure img { width: 100%; aspect-ratio: 390 / 690; object-fit: cover; object-position: top; border: 1px solid #c9d1cc; border-radius: 6px; display: block; }
+  figcaption { font-size: 8pt; line-height: 1.2; color: var(--muted); margin-top: 3px; }
+  figcaption b { color: var(--ink); }
+  .refs { font-size: 8.2pt; line-height: 1.25; padding-left: 22px; }
+  .refs li { margin-bottom: 2px; word-break: break-word; }
+  .note { margin-top: 8px; border: 1px dashed #b9c3bd; padding: 6px 10px; font-size: 9.4pt; }
+  .page-break { break-before: page; }
+</style>
+</head>
+<body>
+
+<div class="head">
+  <h1>aivOavi: Workshop Materials</h1>
+  <div class="sub">A brain game web app to check, protect and train memory</div>
+  <div class="meta">
+    <span><b>Students:</b> ______________________</span>
+    <span><b>Course:</b> ______________________</span>
+    <span><b>Date:</b> November 2026</span>
+  </div>
+</div>
+
+<h2>1. About this document</h2>
+<p>This document has the materials that we made in the workshop session. There are four parts: the need statement, the personas, the competitor analysis and the prototype screenshots. The references are at the end.</p>
+<p>aivOavi is a free web app. It helps people check their memory, keep their brain strong and practise every day. It works in a normal web browser. All data stays on the device of the user. <b>aivOavi is not a medical test, and it cannot diagnose dementia.</b></p>
+
+<h2>2. Need statement</h2>
+<h3>2.1 The problem</h3>
+<ol>
+  <li>In 2021, approximately 57 million people in the world had dementia. Every year there are approximately 10 million new cases [1].</li>
+  <li>Approximately 75% of people with dementia do not have a diagnosis. In low-income countries, this can be up to 90% [2].</li>
+  <li>People can lower their risk. The Lancet Commission found 14 risk factors that people can change. If we remove them, approximately 45% of cases can possibly be prevented or delayed [3]. Two large trials also show a small benefit from training and a healthy lifestyle [4], [5].</li>
+  <li>The tools that people can use today have problems. Many cost money every month. Many are not made for people with early dementia. Some make claims that science does not support. In 2016, the maker of Lumosity paid $2 million to settle deceptive advertising charges from the US FTC [6], [7].</li>
+</ol>
+
+<h3>2.2 The need</h3>
+<div class="box">
+  People who are worried about their memory, healthy people who want to protect their brain, and people with early dementia need <b>one tool that is free, private and easy to use</b>. The tool must help them check their memory, practise every day and see changes early. It must also tell them clearly when to speak to a doctor.
+</div>
+
+<h3>2.3 How aivOavi answers the need, and its limits</h3>
+<div class="two">
+  <ol>
+    <li>A Brain Check-up every 4 weeks, and a trend line that turns orange when scores stay low.</li>
+    <li>Three short games every day, with a garden, badges and levels.</li>
+    <li>Easy mode for people with dementia: one big button, large text, no timers.</li>
+  </ol>
+  <ol start="4">
+    <li>No account and no server. The data is encrypted on the device.</li>
+    <li>Limit: the check-up is not clinically validated. It does not replace a doctor.</li>
+    <li>Limit: nobody has proved that these games prevent dementia [6].</li>
+  </ol>
+</div>
+
+<h2>3. Personas</h2>
+<p>We made five personas. Three of them use the app directly. The caregiver and the doctor get help from the app in a different way. The personas are examples, not real people.</p>
+<table>
+  <thead><tr><th style="width:17%">Persona</th><th style="width:22%">Goal</th><th style="width:30%">Problem today</th><th>How aivOavi helps</th></tr></thead>
+  <tr><td><b>Sam, 66</b><br>The Checker</td><td>Find out if the memory is changing.</td><td>Sam forgets names and is worried. Sam is not ready to see a doctor yet.</td><td>An 8-minute check-up with a clear green or orange result. A summary to print for the doctor.</td></tr>
+  <tr><td><b>Rosa, 54</b><br>The Preventer</td><td>Keep the brain strong with a short daily habit.</td><td>Rosa is healthy but has a family history of dementia. Rosa has little free time.</td><td>Three short games each day. Levels, a streak and a garden keep Rosa motivated. The trend shows early changes.</td></tr>
+  <tr><td><b>Joe, 78</b><br>The Trainee</td><td>Practise every day without stress.</td><td>Joe has early dementia. Most apps have small text, many buttons and timers.</td><td>Easy mode: one big button, "Start here" and "You are finished" markers, read aloud, and no "wrong" answers.</td></tr>
+  <tr><td><b>Priya, 45</b><br>The Caregiver</td><td>Help Joe from a distance.</td><td>Priya does not know if Joe practises or if things change.</td><td>A caregiver area with a PIN, detailed progress, a locked backup and the doctor summary.</td></tr>
+  <tr><td><b>Dr. Mensah</b><br>The Reader</td><td>Make a good decision about a memory test.</td><td>One short visit shows only one result.</td><td>A printed summary with results from many weeks at home.</td></tr>
+</table>
+
+<h2>4. Competitor analysis</h2>
+<p>We compared aivOavi with six products: three brain-training apps, one app for training and testing, and two screening tests. We took the facts from the product pages and app store pages in November 2026 [8]–[13]. Prices can change.</p>
+<table>
+  <thead><tr><th style="width:15%">Product</th><th style="width:16%">Type</th><th style="width:21%">Cost</th><th class="c">Memory screening</th><th class="c">Daily training</th><th class="c">Mode for dementia</th><th class="c">No account, data on device</th></tr></thead>
+  <tr class="us"><td><b>aivOavi</b></td><td>Web app</td><td>Free</td><td class="c">✔</td><td class="c">✔</td><td class="c">✔</td><td class="c">✔</td></tr>
+  <tr><td>Lumosity [10]</td><td>Phone app, website</td><td>Free basic; paid premium</td><td class="c">✘</td><td class="c">✔</td><td class="c">?</td><td class="c">?</td></tr>
+  <tr><td>BrainHQ [8]</td><td>Phone app, website</td><td>$14 a month or $96 a year</td><td class="c">✘</td><td class="c">✔</td><td class="c">?</td><td class="c">?</td></tr>
+  <tr><td>Elevate [11]</td><td>Phone app</td><td>Free basic; paid subscription</td><td class="c">✘</td><td class="c">✔</td><td class="c">?</td><td class="c">?</td></tr>
+  <tr><td>CogniFit [9]</td><td>Phone app, website</td><td>Paid plans; assessment sold separately</td><td class="c">✔ (paid)</td><td class="c">✔</td><td class="c">?</td><td class="c">?</td></tr>
+  <tr><td>SAGE test [12]</td><td>Paper test</td><td>Free for personal clinical use</td><td class="c">✔</td><td class="c">✘</td><td class="c">✘</td><td class="c">✔ (paper)</td></tr>
+  <tr><td>BrainCheck [13]</td><td>Test for clinics</td><td>Sold to clinics</td><td class="c">✔</td><td class="c">✘</td><td class="c">✘</td><td class="c">✘</td></tr>
+</table>
+<p class="key">✔ = yes &nbsp;·&nbsp; ✘ = no &nbsp;·&nbsp; ? = we did not find this information (it does not mean "no").</p>
+
+<div class="two">
+  <div>
+    <h3>4.1 Strengths of the competitors</h3>
+    <ol>
+      <li>BrainHQ has the strongest evidence. Its speed exercise comes from the ACTIVE trial [5].</li>
+      <li>SAGE is free and simple, and it is studied by Ohio State University [12].</li>
+      <li>BrainCheck is made for doctors and clinics [13].</li>
+    </ol>
+    <h3>4.2 Weaknesses of the competitors</h3>
+    <ol>
+      <li>Most training apps need a paid plan for all functions.</li>
+      <li>Training apps do not include a regular check-up, except CogniFit (paid).</li>
+      <li>Screening tests do not include daily training.</li>
+    </ol>
+  </div>
+  <div>
+    <h3>4.3 The gap that aivOavi fills</h3>
+    <p>No other product in this comparison has all of these together: it is free, it has a check-up <i>and</i> daily training <i>and</i> a trend, it has a special mode for people with dementia, and it keeps all data on the device.</p>
+    <h3>4.4 Risks for aivOavi</h3>
+    <ol>
+      <li>aivOavi has no clinical evidence yet.</li>
+      <li>It must not claim that it prevents or diagnoses dementia. The FTC case shows this risk [7].</li>
+      <li>It has no income. It needs a funding plan, for example a grant.</li>
+    </ol>
+  </div>
+</div>
+
+<h3>4.5 How the parts connect</h3>
+<div class="box">
+  The four parts of this work follow one line. The <b>need statement</b> shows the problem: many people have memory problems, but few get help early. The <b>personas</b> show who has this problem and what each person needs. The <b>competitor analysis</b> shows that no current product covers all these needs together. The <b>prototype</b> in section 5 shows our answer: one simple app that tells each user where to start and when to stop.
+</div>
+
+<h2 class="page-break">5. Prototype screenshots</h2>
+<p>The prototype is a working web app. The pictures show the main screens on a phone, in the order a user sees them. The app tells the user where to start ("▼ Start here") and when to stop ("■ You are finished for today").</p>
+<div class="shots">
+  <figure><img src="../screenshots/phone/01-welcome.png" alt=""><figcaption><b>Fig. 1</b> Welcome and "Start here"</figcaption></figure>
+  <figure><img src="../screenshots/phone/02-choose-path.png" alt=""><figcaption><b>Fig. 2</b> Choose a path (step 1 of 5)</figcaption></figure>
+  <figure><img src="../screenshots/phone/04-home.png" alt=""><figcaption><b>Fig. 3</b> Home with today's 3 games</figcaption></figure>
+  <figure><img src="../screenshots/phone/game-memory-match.png" alt=""><figcaption><b>Fig. 4</b> Game: Memory Match</figcaption></figure>
+  <figure><img src="../screenshots/phone/14-game-result.png" alt=""><figcaption><b>Fig. 5</b> Result with stars and points</figcaption></figure>
+  <figure><img src="../screenshots/phone/26-home-finished.png" alt=""><figcaption><b>Fig. 6</b> End: "You are finished for today"</figcaption></figure>
+  <figure><img src="../screenshots/phone/16-checkup-words.png" alt=""><figcaption><b>Fig. 7</b> Check-up, part 1: remember 5 words</figcaption></figure>
+  <figure><img src="../screenshots/phone/19-checkup-clock.png" alt=""><figcaption><b>Fig. 8</b> Check-up, part 4: set the clock</figcaption></figure>
+  <figure><img src="../screenshots/phone/06-progress-ok.png" alt=""><figcaption><b>Fig. 9</b> Progress: green, all OK</figcaption></figure>
+  <figure><img src="../screenshots/phone/24-progress-warning.png" alt=""><figcaption><b>Fig. 10</b> Progress: orange warning</figcaption></figure>
+  <figure><img src="../screenshots/phone/22-easy-home.png" alt=""><figcaption><b>Fig. 11</b> Easy mode for Joe</figcaption></figure>
+  <figure><img src="../screenshots/phone/12-caregiver.png" alt=""><figcaption><b>Fig. 12</b> Caregiver area for Priya</figcaption></figure>
+</div>
+
+<h2>6. References</h2>
+<ol class="refs">
+  <li>World Health Organization. (n.d.). <i>Dementia</i> [Fact sheet]. Retrieved November 2026, from https://www.who.int/news-room/fact-sheets/detail/dementia</li>
+  <li>Alzheimer's Disease International. (2021). <i>World Alzheimer Report 2021: Journey through the diagnosis of dementia.</i> https://www.alzint.org/news-events/news/over-41-million-cases-of-dementia-go-undiagnosed-across-the-globe-world-alzheimer-report-reveals/</li>
+  <li>Livingston, G., Huntley, J., Liu, K. Y., et al. (2024). Dementia prevention, intervention, and care: 2024 report of the Lancet standing Commission. <i>The Lancet, 404</i>(10452), 572–628. https://doi.org/10.1016/S0140-6736(24)01296-0</li>
+  <li>Ngandu, T., Lehtisalo, J., Solomon, A., et al. (2015). A 2 year multidomain intervention of diet, exercise, cognitive training, and vascular risk monitoring versus control to prevent cognitive decline in at-risk elderly people (FINGER). <i>The Lancet, 385</i>, 2255–2263. https://pubmed.ncbi.nlm.nih.gov/25771249/</li>
+  <li>Edwards, J. D., Xu, H., Clark, D. O., et al. (2017). Speed of processing training results in lower risk of dementia. <i>Alzheimer's &amp; Dementia: Translational Research &amp; Clinical Interventions, 3</i>(4), 603–611. https://doi.org/10.1016/j.trci.2017.09.002</li>
+  <li>Simons, D. J., Boot, W. R., Charness, N., et al. (2016). Do "brain-training" programs work? <i>Psychological Science in the Public Interest, 17</i>(3), 103–186. https://doi.org/10.1177/1529100616661983</li>
+  <li>US Federal Trade Commission. (2016, January 5). <i>Lumosity to pay $2 million to settle FTC deceptive advertising charges for its "brain training" program</i> [Press release]. https://www.ftc.gov/news-events/press-releases/2016/01/lumosity-pay-2-million-settle-ftc-deceptive-advertising-charges</li>
+  <li>BrainHQ. (n.d.). <i>Choosing a personal subscription plan.</i> Retrieved November 2026, from https://support.brainhq.com/hc/en-us/articles/115002103266-Choosing-a-personal-subscription-plan</li>
+  <li>CogniFit. (n.d.). <i>CogniFit – Brain Training</i> [Mobile app]. App Store. Retrieved November 2026, from https://apps.apple.com/app/id528285610</li>
+  <li>Lumos Labs. (n.d.). <i>Lumosity: Brain Training Games</i> [Mobile app]. App Store. Retrieved November 2026, from https://apps.apple.com/us/app/lumosity-brain-training-games/id577232024</li>
+  <li>Elevate Labs. (n.d.). <i>Elevate – Brain Training Games</i> [Mobile app]. App Store. Retrieved November 2026, from https://apps.apple.com/us/app/id875063456</li>
+  <li>The Ohio State University Wexner Medical Center. (n.d.). <i>SAGE: Self-Administered Gerocognitive Examination.</i> Retrieved November 2026, from https://wexnermedical.osu.edu/brain-spine-neuro/memory-disorders/sage</li>
+  <li>BrainCheck. (n.d.). <i>BrainCheck Assess.</i> Retrieved November 2026, from https://braincheck.com/platform/assess</li>
+</ol>
+
+<div class="note"><b>Note on language:</b> English is not our native language. We used AI to help our English sound polished.</div>
+
+</body>
+</html>

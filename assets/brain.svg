@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="brain">
+  <g fill="#FFD23F" stroke="#E5A800" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M48 14C40 7 27 9 24 19C14 19 7 29 11 38C4 43 4 56 11 61C8 71 15 80 25 79C29 88 41 90 48 83Z"/>
+    <path d="M52 14C60 7 73 9 76 19C86 19 93 29 89 38C96 43 96 56 89 61C92 71 85 80 75 79C71 88 59 90 52 83Z"/>
+  </g>
+  <g fill="none" stroke="#0B3D2E" stroke-width="3.2" stroke-linecap="round">
+    <path d="M24 19C29 25 34 27 41 25"/>
+    <path d="M11 38C19 37 24 41 26 47"/>
+    <path d="M11 61C19 60 25 57 30 61"/>
+    <path d="M25 79C26 71 32 68 39 70"/>
+    <path d="M40 36C35 44 39 51 46 53"/>
+    <path d="M76 19C71 25 66 27 59 25"/>
+    <path d="M89 38C81 37 76 41 74 47"/>
+    <path d="M89 61C81 60 75 57 70 61"/>
+    <path d="M75 79C74 71 68 68 61 70"/>
+    <path d="M60 36C65 44 61 51 54 53"/>
+  </g>
+</svg>

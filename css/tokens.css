@@ -1,0 +1,33 @@
+/* aivOavi design tokens.
+   Brand: yellow + dark green. Orange = warning. Neon green = all OK.
+   Neon green and orange are only ever used on dark green surfaces (never on yellow) to keep strong contrast. */
+:root {
+  --green-dark: #0B3D2E;   /* page background */
+  --green-deep: #062A1F;   /* top bar, deep panels */
+  --surface: #104A38;      /* cards */
+  --surface-2: #17604A;    /* raised / hover */
+  --line: #2C7A60;         /* borders, grid lines */
+  --yellow: #FFD23F;       /* primary brand + main buttons */
+  --yellow-press: #F2BE12;
+  --orange: #FF8A00;       /* warning */
+  --neon: #39FF14;         /* OK / success */
+  --ink: #FFFFFF;          /* primary text */
+  --ink-2: #D6EDE4;        /* secondary text */
+  --ink-muted: #A9CFC1;    /* muted text (still AA on --green-dark) */
+  --on-yellow: #0B3D2E;    /* text on yellow */
+
+  --radius: 22px;
+  --radius-sm: 14px;
+  --tap: 72px;             /* minimum height for every button */
+  --gap: 16px;
+  --font: ui-rounded, "SF Pro Rounded", "Nunito", "Varela Round", "Arial Rounded MT Bold", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --shadow: 0 6px 0 rgba(0, 0, 0, .28);
+  --focus: 0 0 0 4px var(--green-dark), 0 0 0 8px var(--yellow);
+
+  color-scheme: dark;
+}
+
+/* Three text sizes the user can pick in Settings. */
+html.ts-1 { font-size: 22px; }
+html.ts-2 { font-size: 26px; }
+html.ts-3 { font-size: 30px; }
